@@ -1,0 +1,45 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id        String   @id // Clerk User ID
+  email     String   @unique
+  name      String?
+  image     String?
+  chessComUsername String?
+  createdAt DateTime @default(now())
+  lines      Line[]
+  classrooms Classroom[]
+}
+
+model Classroom {
+  id          String   @id @default(uuid())
+  title       String
+  description String?
+  tags        String[]
+  visibility  String   @default("private") // "public" or "private"
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  lines       Line[]
+}
+
+model Line {
+  id        String   @id @default(uuid())
+  title     String
+  pgn       String   @unique // The moves
+  fen       String?  // Starting position if not standard
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  userId    String
+  user        User        @relation(fields: [userId], references: [id])
+  classrooms  Classroom[]
+}
