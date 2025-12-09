@@ -1,8 +1,11 @@
 # Epoch Chess
 
-> **Master your chess openings with precision and style.**
-
-Epoch Chess is a modern, interactive chess learning platform designed to help you organize, practice, and master your opening repertoire. With a premium 3D experience and intuitive classroom-based organization, it transforms the way you study chess.
+> **Epoch Chess redefines the art of opening preparation.**
+>
+> Designed for the modern player, it fuses rigorous memory training with a breathtaking 3D interface. Forget static PGNs and dry databases. Step into your personal **Classrooms**, where your repertoire comes alive.
+>
+> Train with purpose. Master with style.
+> **Your move.**
 
 ## ✨ Key Features
 
